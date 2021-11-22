@@ -12,7 +12,7 @@ export async function createCharacter(character){
         })
         .single();
 
-    return checkError(response);
+    checkError(response);
 }
 
 /*
@@ -91,10 +91,9 @@ export async function getCharacter() {
     const response = await client
         .from('characters')
         .select()
-        .match({ user_id: client.auth.user().id, })
-        .single();
+        .match({ user_id: client.auth.user().id, });
 
-    return checkError(response);    
+    checkError(response);    
 }
 
 export async function getUser() {
