@@ -95,8 +95,6 @@ function displayStats() {
 }
 
 function displayCatchphrases() {
-    chatchphrasesEl.textContent = '';
-
     for (let catchphrase of catchphrases) {
         const p = document.createElement('p');
 
