@@ -6,10 +6,7 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 export async function createCharacter(character){
     const response = await client
         .from('characters')
-        .insert({ 
-            ...character, 
-            user_id: client.auth.user().id, 
-        })
+        .insert([character])
         .single();
 
     checkError(response);
